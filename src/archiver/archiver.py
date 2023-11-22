@@ -12,6 +12,10 @@ try:
 except:
     pass
 
+
+import chardet
+
+
 class MailArchiver(config_logger.Logger):
     """Archive email
     """
@@ -100,13 +104,50 @@ class MailArchiver(config_logger.Logger):
             self.mails_info[year][month][day].append(mail_info)
 
 
+    def _check_encoding(self, message: str) -> str:
+        result = chardet.detect(message)
+        return result['encoding']
+    
+    def _decode_message(self, bin_message: bytes) -> str:
+
+        encoding = self._check_encoding(bin_message)
+
+        text = ""
+        try:
+            print ("try encoding: {}".format(encoding)) 
+            text = bin_message.decode(encoding, 'ignore')
+        except:
+            encoding_list = ['shift-js', 'gbk','utf-8', 'utf-16', 'utf-32', 'latin-1', 'ascii']
+            # drop the encoding that we already tried
+            encoding_list.remove(encoding)
+
+            for enc in encoding_list:
+                encoding = enc
+                try:
+                    print ("try encoding: {}".format(encoding)) 
+                    # if cannot decode, replace the unknown characters with '?'
+                    text = bin_message.decode(encoding, 'replace')
+                    break
+                except:
+                    pass
+
+            if text == "":
+                encoding = "unknown"
+                print ("ERROR: cannot decode message!!!!!!!!!")
+
+        finally:
+            print ("===[{}]==== text: {}".format(encoding, text))
+            return text
+
     def _style_mails(self, mail: Dict, mail_path: str, message: bytes):
 
-        with helpers.Helper.open_file(mail_path) as f:
+        with helpers.Helper.open_file(mail_path, encoding = 'utf-8') as f:
             f.write('<head>\n<link rel="stylesheet" href="../../../../static/css/custom.css">\n</head>\n')
             self._write_meta_data(mail, f)
             f.write('\n<div class="bordermail">\n')
-            f.write(message.decode('utf-16-le','ignore'))
+            # f.write(message.decode('utf-16-le','ignore')) 
+            msg_text = self._decode_message(message)
+            f.write(msg_text)
             f.write('\n</div>\n')
 
     def _write_meta_data(self, mail: Dict, mail_file):

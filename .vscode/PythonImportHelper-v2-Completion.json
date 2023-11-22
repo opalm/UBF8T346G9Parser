@@ -1,0 +1,270 @@
+[
+    {
+        "label": "pathlib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "shutil",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "shutil",
+        "description": "shutil",
+        "detail": "shutil",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Generator",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "helpers",
+        "importPath": "src.helpers",
+        "description": "src.helpers",
+        "isExtraImport": true,
+        "detail": "src.helpers",
+        "documentation": {}
+    },
+    {
+        "label": "helpers",
+        "importPath": "src.helpers",
+        "description": "src.helpers",
+        "isExtraImport": true,
+        "detail": "src.helpers",
+        "documentation": {}
+    },
+    {
+        "label": "helpers",
+        "importPath": "src.helpers",
+        "description": "src.helpers",
+        "isExtraImport": true,
+        "detail": "src.helpers",
+        "documentation": {}
+    },
+    {
+        "label": "progress",
+        "importPath": "src.helpers",
+        "description": "src.helpers",
+        "isExtraImport": true,
+        "detail": "src.helpers",
+        "documentation": {}
+    },
+    {
+        "label": "config_logger",
+        "importPath": "src.logger",
+        "description": "src.logger",
+        "isExtraImport": true,
+        "detail": "src.logger",
+        "documentation": {}
+    },
+    {
+        "label": "config_logger",
+        "importPath": "src.logger",
+        "description": "src.logger",
+        "isExtraImport": true,
+        "detail": "src.logger",
+        "documentation": {}
+    },
+    {
+        "label": "config_logger",
+        "importPath": "src.logger",
+        "description": "src.logger",
+        "isExtraImport": true,
+        "detail": "src.logger",
+        "documentation": {}
+    },
+    {
+        "label": "config_logger",
+        "importPath": "src.logger",
+        "description": "src.logger",
+        "isExtraImport": true,
+        "detail": "src.logger",
+        "documentation": {}
+    },
+    {
+        "label": "config_logger",
+        "importPath": "src.logger",
+        "description": "src.logger",
+        "isExtraImport": true,
+        "detail": "src.logger",
+        "documentation": {}
+    },
+    {
+        "label": "config_logger",
+        "importPath": "src.logger",
+        "description": "src.logger",
+        "isExtraImport": true,
+        "detail": "src.logger",
+        "documentation": {}
+    },
+    {
+        "label": "locale",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "locale",
+        "description": "locale",
+        "detail": "locale",
+        "documentation": {}
+    },
+    {
+        "label": "chardet",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "chardet",
+        "description": "chardet",
+        "detail": "chardet",
+        "documentation": {}
+    },
+    {
+        "label": "sqlite3",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sqlite3",
+        "description": "sqlite3",
+        "detail": "sqlite3",
+        "documentation": {}
+    },
+    {
+        "label": "dataclasses",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "logging",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "logging",
+        "description": "logging",
+        "detail": "logging",
+        "documentation": {}
+    },
+    {
+        "label": "reader",
+        "importPath": "src.backupreader",
+        "description": "src.backupreader",
+        "isExtraImport": true,
+        "detail": "src.backupreader",
+        "documentation": {}
+    },
+    {
+        "label": "parser",
+        "importPath": "src.olk15parser",
+        "description": "src.olk15parser",
+        "isExtraImport": true,
+        "detail": "src.olk15parser",
+        "documentation": {}
+    },
+    {
+        "label": "archiver",
+        "importPath": "src.archiver",
+        "description": "src.archiver",
+        "isExtraImport": true,
+        "detail": "src.archiver",
+        "documentation": {}
+    },
+    {
+        "label": "MailArchiver",
+        "kind": 6,
+        "importPath": "src.archiver.archiver",
+        "description": "src.archiver.archiver",
+        "peekOfCode": "class MailArchiver(config_logger.Logger):\n    \"\"\"Archive email\n    \"\"\"\n    def __init__(self) -> None:\n        self.mailsdir = 'MailArchive/Mails'\n        self._check_mailsdir(self.mailsdir)\n        self.mails_info = {}\n    def archive_mail(self, mail: Dict, message: bytes) -> None:\n        mail_times = self._get_date(mail)\n        mail_path = self._get_mail_path(mail, mail_times)",
+        "detail": "src.archiver.archiver",
+        "documentation": {}
+    },
+    {
+        "label": "BackupReader",
+        "kind": 6,
+        "importPath": "src.backupreader.reader",
+        "description": "src.backupreader.reader",
+        "peekOfCode": "class BackupReader(config_logger.Logger):\n    \"\"\"Read data from Outlook 2016 Backup folder.\n    Attributes:\n      backup_location: A string of backup folder location.\n      profile_data_location: A string of data folder location based on user.\n    \"\"\"\n    profile_data_location: str\n    filter_hidden = '/.'\n    @property\n    def db_location(self):",
+        "detail": "src.backupreader.reader",
+        "documentation": {}
+    },
+    {
+        "label": "Helper",
+        "kind": 6,
+        "importPath": "src.helpers.helpers",
+        "description": "src.helpers.helpers",
+        "peekOfCode": "class Helper(config_logger.Logger):\n    \"\"\"Helper class with sorta random helper methods\n    \"\"\"\n    @staticmethod\n    def test_location(location: str, location_type: str) -> str:\n        location_path = pathlib.Path(location)\n        if location_type == 'folder' and not location_path.is_dir():\n            raise NotADirectoryError(f'{location} is not a directory')\n        if location_type == 'file' and not location_path.is_file():\n            raise FileNotFoundError(f'{location} is not a file')",
+        "detail": "src.helpers.helpers",
+        "documentation": {}
+    },
+    {
+        "label": "ProgressBar",
+        "kind": 6,
+        "importPath": "src.helpers.progress",
+        "description": "src.helpers.progress",
+        "peekOfCode": "class ProgressBar(config_logger.Logger):\n    \"\"\"Tiny progressbar display in the terminal\n    \"\"\"\n    amount: int\n    counter: int = 0\n    @property\n    def percent_done(self):\n        return '{:05.2f}'.format(self.counter / self.amount * 100)\n    def update(self):\n        self._update_counter()",
+        "detail": "src.helpers.progress",
+        "documentation": {}
+    },
+    {
+        "label": "Logger",
+        "kind": 6,
+        "importPath": "src.logger.config_logger",
+        "description": "src.logger.config_logger",
+        "peekOfCode": "class Logger:\n    \"\"\"Universal logger\n    \"\"\"\n    @property\n    def logger(self):\n        logging.basicConfig(format='[%(asctime)s] %(levelname)s - %(message)s', \n                            datefmt='%d-%m-%Y %H:%M:%S',\n                            level=logging.DEBUG)\n        logger = logging.getLogger(__name__)\n        logger.setLevel('INFO')",
+        "detail": "src.logger.config_logger",
+        "documentation": {}
+    },
+    {
+        "label": "OLK15Parser",
+        "kind": 6,
+        "importPath": "src.olk15parser.parser",
+        "description": "src.olk15parser.parser",
+        "peekOfCode": "class OLK15Parser(config_logger.Logger):\n    \"\"\"Read olk15 formated files\n    \"\"\"\n    def get_mail_content(self, olk15message_location: str, subject: str) -> bytes:\n        with open(olk15message_location, 'rb') as mail_file:\n            message = mail_file.read()\n            sliced_message = self._slice_message(message, subject)\n            return sliced_message\n    def _slice_message(self, message: bytes, subject: str) -> bytes:\n        first_index = self._get_first_index(message, subject)",
+        "detail": "src.olk15parser.parser",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "kind": 5,
+        "importPath": "parser_app",
+        "description": "parser_app",
+        "peekOfCode": "logger = config_logger.Logger()\nif __name__ == \"__main__\":\n    profile_data_location = helpers.Helper.get_location()\n    backupreader_app = reader.BackupReader(profile_data_location)\n    olk15parser_app = parser.OLK15Parser()\n    archiver_app = archiver.MailArchiver()\n    mails_amount = backupreader_app.get_mails_amount()\n    progressbar = progress.ProgressBar(mails_amount)\n    mails = backupreader_app.get_mails_from_database()\n    df = pd.DataFrame(mails)",
+   

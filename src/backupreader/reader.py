@@ -28,10 +28,18 @@ class BackupReader(config_logger.Logger):
             self.logger.warning(f'Missing {sqlitedb}, is the database missing?')
             raise FileNotFoundError
 
-    def get_mails_from_database(self) -> Generator:
+    # modify to get all mails in memory for multiple use
+    def get_mails_from_database(self) -> List:
         self.logger.info('Getting emails from database')
         db_connection = self._connect_to_database(self.db_location)
         mails = self._get_mails(db_connection)
+        return [self._get_info_from_email(dict(mail)) for mail in mails]
+
+    def get_mails_from_database_generator(self) -> Generator:
+        self.logger.info('Getting emails from database')
+        db_connection = self._connect_to_database(self.db_location)
+        mails = self._get_mails(db_connection)
+
         for mail in mails:
             yield self._get_info_from_email(dict(mail))
 

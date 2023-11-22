@@ -39,9 +39,9 @@ class Helper(config_logger.Logger):
         return cls._get_backup_location() + cls._get_profile_data()
 
     @staticmethod
-    def open_file(filename):
+    def open_file(filename,encoding=None):
         path = pathlib.Path(filename)
         if path.is_file:
-            return path.open('a')
-        return path.open('w')
+            return path.open('a',encoding=encoding)
+        return path.open('w',encoding=encoding)
 
