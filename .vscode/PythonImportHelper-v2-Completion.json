@@ -267,4 +267,7 @@
         "importPath": "parser_app",
         "description": "parser_app",
         "peekOfCode": "logger = config_logger.Logger()\nif __name__ == \"__main__\":\n    profile_data_location = helpers.Helper.get_location()\n    backupreader_app = reader.BackupReader(profile_data_location)\n    olk15parser_app = parser.OLK15Parser()\n    archiver_app = archiver.MailArchiver()\n    mails_amount = backupreader_app.get_mails_amount()\n    progressbar = progress.ProgressBar(mails_amount)\n    mails = backupreader_app.get_mails_from_database()\n    df = pd.DataFrame(mails)",
-   
+        "detail": "parser_app",
+        "documentation": {}
+    }
+]
